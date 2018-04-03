@@ -1,7 +1,7 @@
 from tkinter import Tk, Label, Button, LEFT, RIGHT
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
-from RPi.GPIO import GPIO
+#from RPi.GPIO import GPIO
 class Rasp:
     def __init__(self, master):
         self.master = master
