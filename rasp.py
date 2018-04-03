@@ -13,9 +13,9 @@ class Rasp:
         self.led2P = 18
         self.led3P = 21
 
-        GPIO.setup(led1P, GPIO.OUT)
-        GPIO.setup(led2P, GPIO.OUT)
-        GPIO.setup(led3P, GPIO.OUT)
+        GPIO.setup(self.led1P, GPIO.OUT)
+        GPIO.setup(self.led2P, GPIO.OUT)
+        GPIO.setup(self.led3P, GPIO.OUT)
 
         self.label = Label(master, text="LED")
         self.label.pack()
@@ -34,7 +34,7 @@ class Rasp:
 
     def led1Func(self):
         print("LED1")
-        GPIO.output(led1P, GPIO.HIGH)
+        GPIO.output(self.led1P, GPIO.HIGH)
 
     def led2Func(self):
         print("LED2")
