@@ -36,13 +36,24 @@ class Rasp:
 
     def led1Func(self):
         print("LED1")
-        GPIO.output(self.led1P, GPIO.HIGH)
+        if GPIO.output(led1P) == True:
+            GPIO.output(self.led1P, GPIO.LOW)
+        else:
+            GPIO.output(self.led1P, GPIO.HIGH)
 
     def led2Func(self):
         print("LED2")
+        if GPIO.output(led2P) == True:
+             GPIO.output(self.led2P, GPIO.LOW)
+        else:
+             GPIO.output(self.led2P, GPIO.HIGH)
 
     def led3Func(self):
         print("LED3")
+        if GPIO.output(led3P) == True:
+             GPIO.output(self.led3P, GPIO.LOW)
+        else:
+             GPIO.output(self.led3P, GPIO.HIGH)
 
 root = Tk()
 my_gui = Rasp(root)
