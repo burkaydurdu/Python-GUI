@@ -36,7 +36,7 @@ class Rasp:
 
     def led1Func(self):
         print("LED1")
-        if GPIO.output(self.ed1P) == True:
+        if GPIO.output(self.led1P) == True:
             GPIO.output(self.led1P, GPIO.LOW)
         else:
             GPIO.output(self.led1P, GPIO.HIGH)
