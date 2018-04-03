@@ -13,6 +13,8 @@ class Rasp:
         self.led2P = 18
         self.led3P = 21
 
+        GPIO.setmode(GPIO.BCM)
+
         GPIO.setup(self.led1P, GPIO.OUT)
         GPIO.setup(self.led2P, GPIO.OUT)
         GPIO.setup(self.led3P, GPIO.OUT)
