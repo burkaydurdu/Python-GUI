@@ -12,12 +12,14 @@ class Rasp:
         self.led1P = 14
         self.led2P = 18
         self.led3P = 21
+        self.led4P = 20
 
         GPIO.setmode(GPIO.BCM)
 
         GPIO.setup(self.led1P, GPIO.OUT)
         GPIO.setup(self.led2P, GPIO.OUT)
         GPIO.setup(self.led3P, GPIO.OUT)
+        GPIO.setup(self.led4P, GPIO.OUT)
 
         self.label = Label(master, text="LED")
         self.label.pack()
@@ -30,6 +32,9 @@ class Rasp:
 
         self.led3_button = Button(master, text="LED3", command=self.led3Func)
         self.led3_button.pack(side=LEFT)
+
+        self.led4_button = Button(master, text="LED4", command=self.led4Func)
+        self.led4_button.pack(side=LEFT)
 
         self.close_button = Button(master, text="Close", command=master.quit)
         self.close_button.pack(side=RIGHT)
@@ -54,6 +59,14 @@ class Rasp:
              GPIO.output(self.led3P, GPIO.LOW)
         else:
              GPIO.output(self.led3P, GPIO.HIGH)
+
+
+    def led4Func(self):
+        print("LED4")
+        if GPIO.input(self.led4P) == True:
+             GPIO.output(self.led4P, GPIO.LOW)
+        else:
+             GPIO.output(self.led4P, GPIO.HIGH)
 
 root = Tk()
 my_gui = Rasp(root)
